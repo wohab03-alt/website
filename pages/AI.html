@@ -67,6 +67,25 @@ h1.long .btn{padding:8px 24px}
 .codewrap .copybtn{position:absolute;top:50%;right:12px;transform:translateY(-50%);padding:5px 12px;border:0;border-radius:8px;background:#db2777;color:#fff;font:inherit;font-size:14px;font-weight:700;cursor:pointer}
 .codewrap .copybtn:hover{background:#be185d}
 .codewrap .copybtn:focus-visible{outline:3px solid #831843;outline-offset:2px}
+
+.itp .hd{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:14px 0 6px}
+.itp .hd div{border-radius:14px;padding:8px 12px;text-align:center;font-weight:700;font-size:22px;color:#fff;box-shadow:0 3px 8px rgba(0,0,0,.18)}
+.itp .hd .a{background:linear-gradient(#ffa63d,#f07a00)}.itp .hd .b{background:linear-gradient(#4a9bff,#1f6fe0)}
+.itp .row{display:grid;grid-template-columns:1fr 1fr;gap:14px;align-items:center;margin:10px 0;padding:12px;border-radius:14px;background:var(--rb);color:#1d2340;border:1px solid rgba(0,0,0,.06)}
+.itp .lt{display:flex;gap:12px;align-items:flex-start;min-width:0}
+.itp .ico{flex:none;width:56px;height:56px;border-radius:14px;display:grid;place-items:center;color:#fff;font-weight:700;font-size:24px;background:var(--ic);box-shadow:0 2px 6px rgba(0,0,0,.2)}
+.itp .nm{min-width:0;flex:1}
+.itp .nm b{display:block;font-size:21px;line-height:1.2}
+.itp .nm span{display:block;font-size:15px;color:#46506a;margin:1px 0 6px}
+.itp .codewrap .code{margin:0;padding:8px 84px 8px 12px;font-size:13.5px;background:#fff;border:1px solid rgba(0,0,0,.12)}
+.itp .ex{min-width:0;color-scheme:light;font-size:17px}
+.itp .ex input:not([type=checkbox]):not([type=radio]):not([type=color]):not([type=range]):not([type=file]){width:100%;font:inherit;font-size:16px;padding:9px 12px;border:1.5px solid #8ea0b5;border-radius:10px;background:#fff;color:#111}
+.itp .ex input[type=color]{width:70px;height:42px;padding:3px;border:1.5px solid #8ea0b5;border-radius:10px;background:#fff}
+.itp .ex input[type=range]{width:100%}
+.itp .ex label{display:inline-flex;align-items:center;gap:8px;margin-right:18px;cursor:pointer}
+.itp .ex input[type=checkbox],.itp .ex input[type=radio]{width:22px;height:22px;accent-color:#1f6fe0}
+.itp .ex input[type=file]{max-width:100%;font:inherit;font-size:15px}
+@media (max-width:760px){.itp .hd{display:none}.itp .row{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
@@ -131,6 +150,38 @@ h1.long .btn{padding:8px 24px}
 </div>
 </div>
 <div class="wrap">
+<header><h1 class="long"><span class="btn">GitHub-এর এক একাউন্ট থেকে অন্য একাউন্টে Repository সেভ করার নিয়ম</span></h1></header>
+<p class="lead">এক GitHub Account-এর Repository অন্য Account-এ নেওয়ার ৩টি পদ্ধতি নিচে দেওয়া হলো। প্রয়োজন অনুযায়ী যেকোনো একটি বেছে নিন।</p>
+<div class="sec"><h2>পদ্ধতি ১: Fork করে কপি নেওয়া (সবচেয়ে সহজ)</h2></div>
+<div class="list">
+<div class="item"><div class="n" style="--c:#f9a8c9">১</div><div class="tx"><p>যে Account-এ Repository সেভ করতে চান, সেই <strong>নতুন Account</strong>-এ Login করুন।</p></div></div>
+<div class="item"><div class="n" style="--c:#fbe27a">২</div><div class="tx"><p>পুরনো Account-এর Repository-এর লিংকে যান (যেমন <code>github.com/পুরনো-ইউজার/রিপোর-নাম</code>)।</p></div></div>
+<div class="item"><div class="n" style="--c:#c9a8ee">৩</div><div class="tx"><p>উপরে ডান দিকের <strong>Fork</strong> বাটনে ক্লিক করুন।</p></div></div>
+<div class="item"><div class="n" style="--c:#9fdcc0">৪</div><div class="tx"><p><strong>Owner</strong> হিসেবে নতুন Account নির্বাচন করুন, প্রয়োজনে Repository name ঠিক করুন এবং <strong>Create fork</strong> ক্লিক করুন।</p></div></div>
+<div class="item"><div class="n" style="--c:#a9d3f2">৫</div><div class="tx"><p>কিছুক্ষণের মধ্যেই Repository-র কপি নতুন Account-এ তৈরি হয়ে যাবে। (দ্রষ্টব্য: একই Account-এর নিজের Repository নিজের Account-এ Fork করা যায় না।)</p></div></div>
+</div>
+<div class="sec"><h2>পদ্ধতি ২: Transfer ownership (Repository-র মালিকানা অন্য Account-এ দেওয়া)</h2></div>
+<div class="list">
+<div class="item"><div class="n" style="--c:#f9a8c9">১</div><div class="tx"><p>যে Account-এ Repository আছে, সেখানে Login করে Repository খুলুন।</p></div></div>
+<div class="item"><div class="n" style="--c:#fbe27a">২</div><div class="tx"><p><strong>Settings</strong> ট্যাবে ক্লিক করুন।</p></div></div>
+<div class="item"><div class="n" style="--c:#c9a8ee">৩</div><div class="tx"><p><strong>General</strong> পেজের একদম নিচে <strong>Danger Zone</strong> অংশে যান।</p></div></div>
+<div class="item"><div class="n" style="--c:#9fdcc0">৪</div><div class="tx"><p><strong>Transfer ownership</strong> বাটনে ক্লিক করুন।</p></div></div>
+<div class="item"><div class="n" style="--c:#a9d3f2">৫</div><div class="tx"><p>নতুন Account-এর <strong>Username</strong> এবং Repository-র নাম লিখে নিশ্চিত করুন।</p></div></div>
+<div class="item"><div class="n" style="--c:#f9c28f">৬</div><div class="tx"><p>নতুন Account-এর ইমেইলে আমন্ত্রণ যাবে। সেই Account-এ Login করে আমন্ত্রণটি <strong>Accept</strong> করলে Repository নতুন Account-এ চলে যাবে। এতে Issues, Stars, Pull Request-সহ সব কিছু সঙ্গে যায়, তবে পুরনো Account থেকে Repository সরে যায়।</p></div></div>
+</div>
+<div class="sec"><h2>পদ্ধতি ৩: Git Bash দিয়ে সম্পূর্ণ History-সহ কপি করা</h2></div>
+<div class="list">
+<div class="item"><div class="n" style="--c:#f9a8c9">১</div><div class="tx"><p>নতুন Account-এ Login করে <strong>+ &gt; New repository</strong> থেকে একটি <strong>খালি</strong> Repository তৈরি করুন। এখানে README, .gitignore বা License যোগ করবেন না।</p></div></div>
+<div class="item"><div class="n" style="--c:#fbe27a">২</div><div class="tx"><p>Git Bash খুলে পুরনো Repository-র সম্পূর্ণ কপি (সব Branch ও History-সহ) নামান:</p><div class="codewrap"><div class="code">git clone --mirror https://github.com/পুরনো-ইউজার/রিপোর-নাম.git</div><button type="button" class="copybtn" onclick="copyBlock(this)">কপি</button></div></div></div>
+<div class="item"><div class="n" style="--c:#c9a8ee">৩</div><div class="tx"><p>নামানো ফোল্ডারে ঢুকুন:</p><div class="codewrap"><div class="code">cd রিপোর-নাম.git</div><button type="button" class="copybtn" onclick="copyBlock(this)">কপি</button></div></div></div>
+<div class="item"><div class="n" style="--c:#9fdcc0">৪</div><div class="tx"><p>নতুন Account-এর খালি Repository-তে সব পাঠিয়ে দিন:</p><div class="codewrap"><div class="code">git push --mirror https://github.com/নতুন-ইউজার/রিপোর-নাম.git</div><button type="button" class="copybtn" onclick="copyBlock(this)">কপি</button></div><p>Push করার সময় GitHub Login চাইলে নতুন Account-এর তথ্য দিন। Password-এর জায়গায় <strong>Personal Access Token</strong> লাগতে পারে।</p></div></div>
+<div class="item"><div class="n" style="--c:#a9d3f2">৫</div><div class="tx"><p>নতুন Account-এর Repository পেজ <strong>Refresh</strong> করে সব ফাইল ও Commit History এসেছে কিনা দেখুন।</p></div></div>
+<div class="item"><div class="n" style="--c:#f9c28f">৬</div><div class="tx"><p>কাজ শেষ হলে লোকাল কপির ফোল্ডারটি মুছে দিতে পারেন:</p><div class="codewrap"><div class="code">cd ..
+rm -rf রিপোর-নাম.git</div><button type="button" class="copybtn" onclick="copyBlock(this)">কপি</button></div></div></div>
+</div>
+<p class="lead" style="margin-top:14px">টিপস: Private Repository হলে অন্য Account-এর Fork বা Clone করার অনুমতি (Collaborator access) থাকা প্রয়োজন। ছোট প্রজেক্টে পদ্ধতি ১, মালিকানা বদলাতে পদ্ধতি ২ এবং History-সহ আলাদা কপি রাখতে পদ্ধতি ৩ ভালো।</p>
+</div>
+<div class="wrap">
 <header>
 <h1><span class="btn">১৬টি ফ্রি AI Tools</span></h1>
 <p class="sub">যা আপনার কাজকে সহজ করে দেবে!</p>
@@ -152,6 +203,28 @@ h1.long .btn{padding:8px 24px}
 <section class="sec"><h2>মূল কথা</h2><p><code>&lt;a&gt;</code> (অ্যাঙ্কর) ট্যাগ দিয়ে লিংক তৈরি হয়। লিংকে ক্লিক করলে অন্য পেজ, ফাইল বা পেজের অন্য অংশে যাওয়া যায়।</p><div class="codewrap"><div class="code">&lt;a href="https://example.com" target="_blank" rel="noopener"&gt;এখানে ক্লিক করুন&lt;/a&gt;</div><button type="button" class="copybtn" onclick="copyBlock(this)">কপি</button></div></section>
 <section class="sec"><h2>জরুরি অ্যাট্রিবিউট</h2><ul><li><code>href</code> : লিংকের গন্তব্য (আবশ্যক)</li><li><code>target="_blank"</code> : নতুন ট্যাবে খোলে</li><li><code>rel="noopener"</code> : নতুন ট্যাবে খুললে নিরাপত্তার জন্য দিন</li><li><code>download</code> : ক্লিকে ফাইল ডাউনলোড হয়</li></ul></section>
 <section class="sec"><h2>href-এ কী কী দেওয়া যায়</h2><ul><li>ওয়েব ঠিকানা: <code>https://example.com</code></li><li>পেজের অংশ: <code>#contact</code></li><li>ইমেইল: <code>mailto:name@mail.com</code></li><li>ফোন: <code>tel:+8801700000000</code></li></ul><p>ছবিকেও লিংক করা যায়: <code>&lt;a href="#"&gt;&lt;img src="logo.png" alt="হোম"&gt;&lt;/a&gt;</code></p></section>
+</div>
+<div class="wrap itp">
+<header><h1><span class="btn">HTML Input Types</span></h1><div class="note">ফর্মে ইনপুট নেওয়ার ১৭টি ধরন ⌨️</div></header>
+<p class="lead">প্রতিটি ধরনের কোডের ডানে "কপি" বাটনে ক্লিক করলেই কোড কপি হবে। ডানের ঘরে ইনপুটটি সত্যিকারেই কাজ করে, ব্যবহার করে দেখুন।</p>
+<div class="hd"><div class="a">Input Type</div><div class="b">Example</div></div>
+<div class="row" style="--rb:#dbe8fb"><div class="lt"><div class="ico" style="--ic:#3b6fe0" aria-hidden="true">T</div><div class="nm"><b>text</b><span>সাধারণ লেখা (যেমন নাম)</span><div class="codewrap"><div class="code">&lt;input type="text"&gt;</div><button type="button" class="copybtn" onclick="copyBlock(this)">কপি</button></div></div></div><div class="ex"><input type="text" placeholder="Enter your name" aria-label="text"></div></div>
+<div class="row" style="--rb:#fcd9e1"><div class="lt"><div class="ico" style="--ic:#e83e6c" aria-hidden="true">🔒</div><div class="nm"><b>password</b><span>লেখা ডট (•) হয়ে লুকানো থাকে</span><div class="codewrap"><div class="code">&lt;input type="password"&gt;</div><button type="button" class="copybtn" onclick="copyBlock(this)">কপি</button></div></div></div><div class="ex"><input type="password" value="password123" aria-label="password"></div></div>
+<div class="row" style="--rb:#d3f1e1"><div class="lt"><div class="ico" style="--ic:#18a66a" aria-hidden="true">✉️</div><div class="nm"><b>email</b><span>ইমেইল ঠিকানা (ভুল ফরম্যাট ধরা পড়ে)</span><div class="codewrap"><div class="code">&lt;input type="email"&gt;</div><button type="button" class="copybtn" onclick="copyBlock(this)">কপি</button></div></div></div><div class="ex"><input type="email" placeholder="you@example.com" aria-label="email"></div></div>
+<div class="row" style="--rb:#fdeccb"><div class="lt"><div class="ico" style="--ic:#f59e0b" aria-hidden="true">123</div><div class="nm"><b>number</b><span>শুধু সংখ্যা, তীর দিয়ে বাড়ানো-কমানো</span><div class="codewrap"><div class="code">&lt;input type="number"&gt;</div><button type="button" class="copybtn" onclick="copyBlock(this)">কপি</button></div></div></div><div class="ex"><input type="number" value="10" aria-label="number"></div></div>
+<div class="row" style="--rb:#e2dcf7"><div class="lt"><div class="ico" style="--ic:#7c3aed" aria-hidden="true">📞</div><div class="nm"><b>tel</b><span>ফোন নম্বর (মোবাইলে নম্বর কিবোর্ড আসে)</span><div class="codewrap"><div class="code">&lt;input type="tel"&gt;</div><button type="button" class="copybtn" onclick="copyBlock(this)">কপি</button></div></div></div><div class="ex"><input type="tel" placeholder="+91 98765 43210" aria-label="tel"></div></div>
+<div class="row" style="--rb:#cdeefa"><div class="lt"><div class="ico" style="--ic:#0ea5e9" aria-hidden="true">🔗</div><div class="nm"><b>url</b><span>ওয়েবসাইটের লিংক</span><div class="codewrap"><div class="code">&lt;input type="url"&gt;</div><button type="button" class="copybtn" onclick="copyBlock(this)">কপি</button></div></div></div><div class="ex"><input type="url" placeholder="https://example.com" aria-label="url"></div></div>
+<div class="row" style="--rb:#fcd6e3"><div class="lt"><div class="ico" style="--ic:#ec4899" aria-hidden="true">🔍</div><div class="nm"><b>search</b><span>সার্চ বক্স</span><div class="codewrap"><div class="code">&lt;input type="search"&gt;</div><button type="button" class="copybtn" onclick="copyBlock(this)">কপি</button></div></div></div><div class="ex"><input type="search" placeholder="Search..." aria-label="search"></div></div>
+<div class="row" style="--rb:#e0dbf6"><div class="lt"><div class="ico" style="--ic:#6d4ccf" aria-hidden="true">📅</div><div class="nm"><b>date</b><span>তারিখ বাছাই</span><div class="codewrap"><div class="code">&lt;input type="date"&gt;</div><button type="button" class="copybtn" onclick="copyBlock(this)">কপি</button></div></div></div><div class="ex"><input type="date" aria-label="date"></div></div>
+<div class="row" style="--rb:#d3f1e1"><div class="lt"><div class="ico" style="--ic:#18a66a" aria-hidden="true">🕒</div><div class="nm"><b>time</b><span>সময় বাছাই</span><div class="codewrap"><div class="code">&lt;input type="time"&gt;</div><button type="button" class="copybtn" onclick="copyBlock(this)">কপি</button></div></div></div><div class="ex"><input type="time" aria-label="time"></div></div>
+<div class="row" style="--rb:#fdeccb"><div class="lt"><div class="ico" style="--ic:#f59e0b" aria-hidden="true">🗓️</div><div class="nm"><b>datetime-local</b><span>তারিখ ও সময় একসাথে</span><div class="codewrap"><div class="code">&lt;input type="datetime-local"&gt;</div><button type="button" class="copybtn" onclick="copyBlock(this)">কপি</button></div></div></div><div class="ex"><input type="datetime-local" aria-label="datetime-local"></div></div>
+<div class="row" style="--rb:#d9e6fb"><div class="lt"><div class="ico" style="--ic:#2f6fe0" aria-hidden="true">📆</div><div class="nm"><b>month</b><span>মাস ও বছর বাছাই</span><div class="codewrap"><div class="code">&lt;input type="month"&gt;</div><button type="button" class="copybtn" onclick="copyBlock(this)">কপি</button></div></div></div><div class="ex"><input type="month" aria-label="month"></div></div>
+<div class="row" style="--rb:#fcd9e1"><div class="lt"><div class="ico" style="--ic:#e83e6c" aria-hidden="true">🗒️</div><div class="nm"><b>week</b><span>বছরের সপ্তাহ বাছাই</span><div class="codewrap"><div class="code">&lt;input type="week"&gt;</div><button type="button" class="copybtn" onclick="copyBlock(this)">কপি</button></div></div></div><div class="ex"><input type="week" aria-label="week"></div></div>
+<div class="row" style="--rb:#e2dcf7"><div class="lt"><div class="ico" style="--ic:#7c3aed" aria-hidden="true">🎨</div><div class="nm"><b>color</b><span>রং বাছাই</span><div class="codewrap"><div class="code">&lt;input type="color"&gt;</div><button type="button" class="copybtn" onclick="copyBlock(this)">কপি</button></div></div></div><div class="ex"><input type="color" value="#1d4ed8" aria-label="color"></div></div>
+<div class="row" style="--rb:#d3f1e1"><div class="lt"><div class="ico" style="--ic:#18a66a" aria-hidden="true">🎚️</div><div class="nm"><b>range</b><span>স্লাইডার (টেনে মান ঠিক করা)</span><div class="codewrap"><div class="code">&lt;input type="range"&gt;</div><button type="button" class="copybtn" onclick="copyBlock(this)">কপি</button></div></div></div><div class="ex"><input type="range" aria-label="range"></div></div>
+<div class="row" style="--rb:#fdeccb"><div class="lt"><div class="ico" style="--ic:#2f6fe0" aria-hidden="true">☑️</div><div class="nm"><b>checkbox</b><span>টিক দেওয়া (একাধিক বাছাই করা যায়)</span><div class="codewrap"><div class="code">&lt;input type="checkbox"&gt;</div><button type="button" class="copybtn" onclick="copyBlock(this)">কপি</button></div></div></div><div class="ex"><label><input type="checkbox" checked> I agree to the terms</label></div></div>
+<div class="row" style="--rb:#d9e6fb"><div class="lt"><div class="ico" style="--ic:#2f6fe0" aria-hidden="true">🔘</div><div class="nm"><b>radio</b><span>অনেকের মধ্যে একটি বাছাই</span><div class="codewrap"><div class="code">&lt;input type="radio"&gt;</div><button type="button" class="copybtn" onclick="copyBlock(this)">কপি</button></div></div></div><div class="ex"><label><input type="radio" name="itp_gender" checked> Male</label><label><input type="radio" name="itp_gender"> Female</label></div></div>
+<div class="row" style="--rb:#fcd6e3"><div class="lt"><div class="ico" style="--ic:#6d4ccf" aria-hidden="true">📄</div><div class="nm"><b>file</b><span>ফাইল আপলোড</span><div class="codewrap"><div class="code">&lt;input type="file"&gt;</div><button type="button" class="copybtn" onclick="copyBlock(this)">কপি</button></div></div></div><div class="ex"><input type="file" aria-label="file"></div></div>
 </div>
 <div class="wrap">
 <header><h1 class="long"><span class="btn">Web Development-এর পরিচিতি</span></h1></header>
