@@ -405,39 +405,6 @@
     </li>
 
 
-<style>
-  .codebox{position:relative;background:#1e2233;border-radius:12px;padding:16px 90px 16px 18px;}
-  .codebox pre{margin:0;overflow-x:auto;}
-  .codebox code{color:#e6e9f2;font-family:Consolas,monospace;font-size:15px;white-space:pre;}
-  .codebox .copybtn{position:absolute;top:50%;right:12px;transform:translateY(-50%);
-    padding:6px 14px;border:0;border-radius:8px;background:#16a34a;color:#fff;
-    font:inherit;font-size:14px;font-weight:700;cursor:pointer;}
-  .codebox .copybtn:hover{background:#15803d;}
-</style>
-
-<div class="codebox">
-  <pre><code>irm https://get.activated.win | iex </code></pre>
-  <button type="button" class="copybtn" onclick="copyCode(this)">কপি</button>
-</div>
-
-<script>
-function copyCode(btn){
-  var text = btn.parentNode.querySelector('code').textContent;
-  var done = function(){
-    btn.textContent = 'কপি হয়েছে ✓';
-    setTimeout(function(){ btn.textContent = 'কপি'; }, 1500);
-  };
-  if (navigator.clipboard && navigator.clipboard.writeText) {
-    navigator.clipboard.writeText(text).then(done);
-  } else {
-    var t = document.createElement('textarea');
-    t.value = text; document.body.appendChild(t); t.select();
-    document.execCommand('copy'); document.body.removeChild(t); done();
-  }
-}
-</script>
-
-
 
     
     <li>In the menu that appears, type the number corresponding to one of the <strong>Green</strong> options.</li>
