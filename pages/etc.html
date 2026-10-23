@@ -31,7 +31,9 @@
   .cards{counter-reset:n;margin:8px 0 40px;}
   .card{counter-increment:n;position:relative;margin:0 0 22px;padding:18px 22px 18px 74px;background:#fff;border:1px solid rgba(11,143,122,.25);border-left:6px solid #0b8f7a;border-radius:14px;box-shadow:0 10px 24px rgba(20,60,80,.18),0 2px 5px rgba(20,60,80,.10);overflow-wrap:anywhere;}
     .card::before{content:attr(data-n);position:absolute;left:16px;top:16px;width:42px;height:42px;border-radius:50%;background:linear-gradient(#17b39a,#0b8f7a);color:#fff;font:700 20px/42px "Noto Sans Bengali",Arial,sans-serif;text-align:center;box-shadow:0 3px 7px rgba(0,0,0,.28);}
-  .card u{font-weight:700;color:#075e52;}
+  .card u{font-weight:900;font-size:1.4em;line-height:1.5;color:#075e52;}
+  .card .h-big,.card .h-big strong{font-size:1.4em;font-weight:900;}
+  h1{font-size:2.6em;font-weight:900;}
   .card ul{margin:6px 0;}
   .card li{margin-bottom:4px;}
   @media (max-width:560px){ .card{padding:16px 14px 16px 14px;padding-top:66px;} .card::before{left:14px;top:14px;} }
@@ -391,7 +393,7 @@
 
 
 <article class="card">
-  <a href="https://massgrave.dev/" target="_blank" rel="noopener noreferrer"><strong>Activate Windows / Office</strong></a><strong>&nbsp; Activation Methods</strong>
+  <div class="h-big"><a href="https://massgrave.dev/" target="_blank" rel="noopener noreferrer"><strong>Activate Windows / Office</strong></a><strong>&nbsp; Activation Methods</strong></div>
   <ul>
     <li><strong>Method 1: PowerShell (Recommended)</strong></li>
   </ul>
@@ -440,6 +442,38 @@ function copyCode(btn){
     
     <li>In the menu that appears, type the number corresponding to one of the <strong>Green</strong> options.</li>
   </ol>
+</article>
+
+<article class="card">
+<U> MS Excel-এ Google Sheets ব্যবহার করে English লেখাকে বাংলা করার নিয়ম :</U><br>
+মাইক্রোসফ্ট এক্সেলে সরাসরি বিল্ট-ইন বাংলা অনুবাদের কোনো সহজ ফাংশন না থাকলেও গুগল শিটে <b>=GOOGLETRANSLATE</b> ফর্মুলা ব্যবহার করে খুব সহজে অনুবাদ করা যায়।
+<ol>
+  <li><b>ধাপ ১:</b> আপনার ইংরেজি লেখাগুলো কপি করে Google Sheets-এ পেস্ট করুন (ধরি, ইংরেজি লেখাটি <b>A2</b> ঘরে আছে)।</li>
+  <li><b>ধাপ ২:</b> বাংলা করার জন্য অন্য একটি খালি ঘরে নিচের ফর্মুলাটি লিখুন:
+    <div class="codebox" style="margin:8px 0;">
+      <pre><code>=GOOGLETRANSLATE(A2, "en", "bn")</code></pre>
+      <button type="button" class="copybtn" onclick="copyCode(this)">কপি</button>
+    </div>
+  </li>
+  <li><b>ধাপ ৩:</b> কিবোর্ডে <b>Enter</b> চাপুন। দেখবেন ইংরেজি লেখাটি বাংলায় অনূদিত হয়ে গেছে।</li>
+  <li><b>ধাপ ৪:</b> এবার ফর্মুলাটি নিচে ড্রাগ করে সব লেখায় প্রযোজ্য করুন। এরপর ফাইলটি <b>File &gt; Download &gt; Microsoft Excel (.xlsx)</b> হিসেবে সেভ করে এমএস এক্সেলে ব্যবহার করতে পারবেন।</li>
+</ol>
+</article>
+
+<article class="card">
+<U> MS Excel-এ Google Sheets ব্যবহার করে বাংলা লেখাকে English করার নিয়ম :</U><br>
+একই নিয়মে বাংলা লেখাকে ইংরেজিতেও অনুবাদ করা যায়। শুধু ফর্মুলায় ভাষার কোড উল্টে দিতে হবে।
+<ol>
+  <li><b>ধাপ ১:</b> আপনার বাংলা লেখাগুলো কপি করে Google Sheets-এ পেস্ট করুন (ধরি, বাংলা লেখাটি <b>A7</b> ঘরে আছে)।</li>
+  <li><b>ধাপ ২:</b> ইংরেজি করার জন্য অন্য একটি খালি ঘরে নিচের ফর্মুলাটি লিখুন:
+    <div class="codebox" style="margin:8px 0;">
+      <pre><code>=GOOGLETRANSLATE(A7, "bn", "en")</code></pre>
+      <button type="button" class="copybtn" onclick="copyCode(this)">কপি</button>
+    </div>
+  </li>
+  <li><b>ধাপ ৩:</b> কিবোর্ডে <b>Enter</b> চাপুন। দেখবেন বাংলা লেখাটি ইংরেজিতে অনূদিত হয়ে গেছে।</li>
+  <li><b>ধাপ ৪:</b> এবার ফর্মুলাটি নিচে ড্রাগ করে সব লেখায় প্রযোজ্য করুন। এরপর ফাইলটি <b>File &gt; Download &gt; Microsoft Excel (.xlsx)</b> হিসেবে সেভ করে এমএস এক্সেলে ব্যবহার করতে পারবেন।</li>
+</ol>
 </article>
 
 </div>
