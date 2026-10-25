@@ -288,6 +288,885 @@ function copyCode(btn){
 <li>একই পেজে একাধিক কোড ব্লক থাকলে প্রতিটির জন্য শুধু <code>&lt;div class="codebox"&gt;</code> অংশটি আবার লিখলেই চলবে। CSS ও স্ক্রিপ্ট একবারই লাগবে।</li>
 </ul>
 </div>
+</div>
+<div class="wrap">
+<header><h1 class="long"><span class="btn">Job Application Form ও Flower Shop</span></h1><div class="note">HTML ও CSS দিয়ে দুটি ওয়েবপেজ 🌸</div></header>
+<p class="lead">প্রতিটি পেজের কোড আর তার লাইভ প্রিভিউ পাশাপাশি দেখানো হয়েছে। Job Application Form-এর প্রতিটি ফিল্ডের পাশে "Copy" বাটনে ক্লিক করলে সেই অংশের কোড কপি হবে।</p>
+<iframe id="jobFlowerFrame" title="Job Application Form ও Flower Shop" style="display:block;width:100%;height:2200px;border:0;border-radius:12px;overflow:hidden" srcdoc="&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+&lt;meta charset=&quot;UTF-8&quot;&gt;
+&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0, viewport-fit=cover&quot;&gt;
+&lt;title&gt;Job Application Form&lt;/title&gt;
+&lt;style&gt;
+:root{color-scheme:light}
+*{box-sizing:border-box}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+body{margin:0;font-family:Arial,sans-serif;min-height:100vh;
+background:radial-gradient(circle at 8% 4%,#ff8fc8 0,transparent 22%),radial-gradient(circle at 92% 0,#ffd23f 0,transparent 25%),linear-gradient(160deg,#fff23a 0%,#5fe7ff 38%,#3d7bff 62%,#ffe83a 100%);
+padding:calc(18px + env(safe-area-inset-top,0px)) 14px calc(18px + env(safe-area-inset-bottom,0px))}
+.poster{max-width:1500px;margin:auto}
+.top{display:flex;align-items:center;justify-content:space-around;gap:10px;margin-bottom:14px}
+.top svg{height:92px;width:auto;filter:drop-shadow(0 4px 6px rgba(0,0,0,.25))}
+.grid{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,1fr);gap:12px;align-items:start}
+.grid&gt;*{min-width:0}
+.win{border-radius:14px;overflow:hidden;border:3px solid #1a8cff;box-shadow:0 8px 20px rgba(0,0,40,.35);margin-bottom:12px}
+.grid&gt;div&gt;.win:last-child,.grid&gt;.win{margin-bottom:0}
+.bar{display:flex;align-items:center;gap:8px;padding:8px 12px;background:#0c1e4d}
+.dot{width:14px;height:14px;border-radius:50%;flex:none}
+.r{background:#ff5f57}.y{background:#febc2e}.g{background:#28c840}
+.tab{display:flex;align-items:center;gap:6px;padding:6px 14px;margin-left:6px;border-radius:8px 8px 0 0;background:#10285f;color:#fff;font-size:14px;font-weight:700}
+.tab b{display:inline-block;width:18px;height:20px;border-radius:3px;font-size:10px;line-height:20px;text-align:center;color:#fff}
+.h5{background:#e44d26}.c3{background:#2965f1}
+.code{background:#071536;margin:0;padding:10px 6px;font:14px/1.55 Consolas,&quot;Courier New&quot;,monospace;color:#e8f0ff;overflow:auto}
+#codeHtml{height:640px}#codeCss{height:520px}#codeHtml2{height:640px}#codeCss2{height:560px}.grid2{margin-top:22px}#flowerPreview{background:#fff;color:#333}
+.code .l{display:block;white-space:pre;padding-left:46px;position:relative;min-height:1.55em}
+.code .l::before{content:attr(data-n);position:absolute;left:0;width:34px;text-align:right;color:#8fb2ff}
+.code::-webkit-scrollbar{width:10px;height:10px}.code::-webkit-scrollbar-thumb{background:#1f3b86;border-radius:6px}
+.t{color:#ff4fd8}.a{color:#2fe0ff}.s{color:#ffe14d}.c{color:#6f84b8}.p{color:#2fe0ff}.v{color:#ff4fd8}.k{color:#ffe14d}
+.browser{background:#e8efff}
+.browser .bar{background:#dde8fb}
+.url{flex:1;margin-left:8px;padding:6px 12px;border-radius:8px;background:#fff;color:#223;font-size:14px;display:flex;align-items:center;gap:8px;min-width:0}
+.url svg{width:18px;height:18px;flex:none}
+.brand{display:flex;align-items:center;justify-content:flex-end;gap:10px;margin-top:14px;color:#0d2a8a;font-weight:800;font-size:24px;line-height:1.05}
+#preview .row{position:relative}
+#preview .copy-btn{width:auto;height:28px;padding:0 10px;border:1px solid #bcd0fb;border-radius:6px;background:#e6eeff;color:#1e3fa8;font-size:12px;font-weight:700;display:inline-flex;gap:0}
+#preview .copy-btn:hover{background:#d3e1ff}
+#preview .field .copy-btn{position:absolute;right:8px;top:50%;transform:translateY(-50%)}
+#preview .field .copy-btn.left-of-chev{right:38px}
+#preview .row&gt;.copy-btn.corner{position:absolute;top:-4px;right:0}
+#preview .field.hascopy input{padding-right:84px}
+#preview .field.hascopy select{padding-right:110px}
+.brand svg{width:60px;height:60px}
+@media (max-width:860px){.grid{grid-template-columns:minmax(0,1fr)}.top svg{height:58px}.grid&gt;div&gt;.win:last-child{margin-bottom:12px}}
+&lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+
+&lt;!-- icon sprite used by the form code --&gt;
+&lt;svg width=&quot;0&quot; height=&quot;0&quot; style=&quot;position:absolute&quot; aria-hidden=&quot;true&quot;&gt;
+&lt;symbol id=&quot;i-user&quot; viewBox=&quot;0 0 24 24&quot;&gt;&lt;circle cx=&quot;12&quot; cy=&quot;8&quot; r=&quot;4.5&quot; fill=&quot;currentColor&quot;/&gt;&lt;path d=&quot;M3.5 21c0-4.4 3.8-7 8.5-7s8.5 2.6 8.5 7H3.5Z&quot; fill=&quot;currentColor&quot;/&gt;&lt;/symbol&gt;
+&lt;symbol id=&quot;i-mail&quot; viewBox=&quot;0 0 24 24&quot;&gt;&lt;path fill=&quot;currentColor&quot; d=&quot;M3 5h18a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1Zm1.5 2.2v.4l7.5 5.1 7.5-5.1v-.4h-15Z&quot;/&gt;&lt;/symbol&gt;
+&lt;symbol id=&quot;i-phone&quot; viewBox=&quot;0 0 24 24&quot;&gt;&lt;path fill=&quot;currentColor&quot; d=&quot;M6.6 10.8a15 15 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.6a1 1 0 0 1-.25 1l-2.22 2.2Z&quot;/&gt;&lt;/symbol&gt;
+&lt;symbol id=&quot;i-brief&quot; viewBox=&quot;0 0 24 24&quot;&gt;&lt;path fill=&quot;currentColor&quot; d=&quot;M9 3a2 2 0 0 0-2 2v1H4a2 2 0 0 0-2 2v4h20V8a2 2 0 0 0-2-2h-3V5a2 2 0 0 0-2-2H9Zm0 2h6v1H9V5ZM2 14v5a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-5h-8v1.5h-4V14H2Z&quot;/&gt;&lt;/symbol&gt;
+&lt;symbol id=&quot;i-doc&quot; viewBox=&quot;0 0 24 24&quot;&gt;&lt;path fill=&quot;currentColor&quot; d=&quot;M6 2h8l6 6v12a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2Zm7 1.5V9h5.5L13 3.5ZM8 13h8v1.6H8V13Zm0 3.5h8V18H8v-1.5Z&quot;/&gt;&lt;/symbol&gt;
+&lt;symbol id=&quot;i-cloud&quot; viewBox=&quot;0 0 24 24&quot;&gt;&lt;path fill=&quot;currentColor&quot; d=&quot;M12 4a6 6 0 0 0-5.7 4.1A4.5 4.5 0 0 0 7 17h10.5a4 4 0 0 0 .6-7.95A6 6 0 0 0 12 4Zm0 4 4 4.2h-2.5V16h-3v-3.8H8L12 8Z&quot;/&gt;&lt;/symbol&gt;
+&lt;symbol id=&quot;i-chat&quot; viewBox=&quot;0 0 24 24&quot;&gt;&lt;path fill=&quot;currentColor&quot; d=&quot;M12 2C6.5 2 2 5.9 2 10.8c0 2.4 1.1 4.6 3 6.2V22l4.4-2.5c.8.2 1.7.3 2.6.3 5.5 0 10-3.9 10-8.8S17.5 2 12 2Zm-4 9.8a1.3 1.3 0 1 1 0-2.6 1.3 1.3 0 0 1 0 2.6Zm4 0a1.3 1.3 0 1 1 0-2.6 1.3 1.3 0 0 1 0 2.6Zm4 0a1.3 1.3 0 1 1 0-2.6 1.3 1.3 0 0 1 0 2.6Z&quot;/&gt;&lt;/symbol&gt;
+&lt;symbol id=&quot;i-lock&quot; viewBox=&quot;0 0 24 24&quot;&gt;&lt;path fill=&quot;currentColor&quot; d=&quot;M6 10V8a6 6 0 1 1 12 0v2h1a1 1 0 0 1 1 1v9a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1v-9a1 1 0 0 1 1-1h1Zm2 0h8V8a4 4 0 1 0-8 0v2Z&quot;/&gt;&lt;/symbol&gt;
+&lt;symbol id=&quot;i-globe&quot; viewBox=&quot;0 0 24 24&quot;&gt;&lt;g fill=&quot;none&quot; stroke=&quot;currentColor&quot; stroke-width=&quot;2&quot; stroke-linecap=&quot;round&quot;&gt;&lt;circle cx=&quot;12&quot; cy=&quot;12&quot; r=&quot;9&quot;/&gt;&lt;path d=&quot;M3 12h18M12 3c3 3 3 15 0 18M12 3c-3 3-3 15 0 18&quot;/&gt;&lt;/g&gt;&lt;/symbol&gt;
+&lt;symbol id=&quot;i-search&quot; viewBox=&quot;0 0 24 24&quot;&gt;&lt;g fill=&quot;none&quot; stroke=&quot;currentColor&quot; stroke-width=&quot;2.5&quot; stroke-linecap=&quot;round&quot;&gt;&lt;circle cx=&quot;10.5&quot; cy=&quot;10.5&quot; r=&quot;6.5&quot;/&gt;&lt;path d=&quot;m15.5 15.5 5 5&quot;/&gt;&lt;/g&gt;&lt;/symbol&gt;
+&lt;symbol id=&quot;i-cal&quot; viewBox=&quot;0 0 24 24&quot;&gt;&lt;path fill=&quot;currentColor&quot; d=&quot;M7 2h2v2h6V2h2v2h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2V2Zm-2 8v10h14V10H5Zm2 2h3v3H7v-3Z&quot;/&gt;&lt;/symbol&gt;
+&lt;symbol id=&quot;i-send&quot; viewBox=&quot;0 0 24 24&quot;&gt;&lt;path fill=&quot;currentColor&quot; d=&quot;M2 21 23 12 2 3v7l15 2-15 2v7Z&quot;/&gt;&lt;/symbol&gt;
+&lt;symbol id=&quot;i-chev&quot; viewBox=&quot;0 0 24 24&quot;&gt;&lt;path d=&quot;m6 9 6 6 6-6&quot; fill=&quot;none&quot; stroke=&quot;currentColor&quot; stroke-width=&quot;2.5&quot; stroke-linecap=&quot;round&quot; stroke-linejoin=&quot;round&quot;/&gt;&lt;/symbol&gt;
+&lt;/svg&gt;
+
+&lt;div class=&quot;poster&quot;&gt;
+
+&lt;div class=&quot;top&quot;&gt;
+&lt;svg viewBox=&quot;0 0 120 100&quot;&gt;&lt;rect x=&quot;14&quot; y=&quot;10&quot; width=&quot;92&quot; height=&quot;62&quot; rx=&quot;8&quot; fill=&quot;#3a3fd8&quot; stroke=&quot;#1b1f7a&quot; stroke-width=&quot;5&quot;/&gt;&lt;rect x=&quot;22&quot; y=&quot;18&quot; width=&quot;76&quot; height=&quot;46&quot; rx=&quot;3&quot; fill=&quot;#4d6bff&quot;/&gt;&lt;text x=&quot;60&quot; y=&quot;52&quot; font-size=&quot;30&quot; font-weight=&quot;900&quot; fill=&quot;#fff&quot; text-anchor=&quot;middle&quot; font-family=&quot;Arial&quot;&gt;&amp;lt;/&amp;gt;&lt;/text&gt;&lt;path d=&quot;M4 78h112l-10 14H14Z&quot; fill=&quot;#c9cfff&quot; stroke=&quot;#1b1f7a&quot; stroke-width=&quot;4&quot;/&gt;&lt;/svg&gt;
+&lt;svg viewBox=&quot;0 0 100 120&quot;&gt;&lt;text x=&quot;50&quot; y=&quot;18&quot; font-size=&quot;20&quot; font-weight=&quot;900&quot; text-anchor=&quot;middle&quot; fill=&quot;#1b1f7a&quot; font-family=&quot;Arial&quot;&gt;HTML&lt;/text&gt;&lt;path d=&quot;M8 28h84l-8 78-34 12-34-12Z&quot; fill=&quot;#e44d26&quot;/&gt;&lt;path d=&quot;M50 32v82l28-10 7-72Z&quot; fill=&quot;#f16529&quot;/&gt;&lt;path d=&quot;M28 50h44l-2 14H42l1 14h25l-2 24-16 5-16-5-1-12h13l1 7 5 2 5-2 1-10H30Z&quot; fill=&quot;#fff&quot;/&gt;&lt;/svg&gt;
+&lt;svg viewBox=&quot;0 0 100 120&quot;&gt;&lt;text x=&quot;50&quot; y=&quot;18&quot; font-size=&quot;20&quot; font-weight=&quot;900&quot; text-anchor=&quot;middle&quot; fill=&quot;#1b1f7a&quot; font-family=&quot;Arial&quot;&gt;CSS&lt;/text&gt;&lt;path d=&quot;M8 28h84l-8 78-34 12-34-12Z&quot; fill=&quot;#2965f1&quot;/&gt;&lt;path d=&quot;M50 32v82l28-10 7-72Z&quot; fill=&quot;#3d8bff&quot;/&gt;&lt;path d=&quot;M28 50h44l-1 12H42l1 12h26l-3 28-16 5-16-5-1-12h13l1 7 5 2 5-2 1-10H30Z&quot; fill=&quot;#fff&quot;/&gt;&lt;/svg&gt;
+&lt;svg viewBox=&quot;0 0 130 110&quot;&gt;&lt;rect x=&quot;10&quot; y=&quot;6&quot; width=&quot;84&quot; height=&quot;98&quot; rx=&quot;8&quot; fill=&quot;#fff&quot; stroke=&quot;#1b1f7a&quot; stroke-width=&quot;4&quot;/&gt;&lt;circle cx=&quot;32&quot; cy=&quot;32&quot; r=&quot;8&quot; fill=&quot;#2a7de1&quot;/&gt;&lt;path d=&quot;M18 54c0-9 6-14 14-14s14 5 14 14Z&quot; fill=&quot;#2a7de1&quot;/&gt;&lt;rect x=&quot;52&quot; y=&quot;24&quot; width=&quot;36&quot; height=&quot;6&quot; rx=&quot;3&quot; fill=&quot;#6aa8ff&quot;/&gt;&lt;rect x=&quot;52&quot; y=&quot;36&quot; width=&quot;30&quot; height=&quot;6&quot; rx=&quot;3&quot; fill=&quot;#6aa8ff&quot;/&gt;&lt;rect x=&quot;20&quot; y=&quot;66&quot; width=&quot;62&quot; height=&quot;6&quot; rx=&quot;3&quot; fill=&quot;#6aa8ff&quot;/&gt;&lt;rect x=&quot;20&quot; y=&quot;78&quot; width=&quot;50&quot; height=&quot;6&quot; rx=&quot;3&quot; fill=&quot;#6aa8ff&quot;/&gt;&lt;circle cx=&quot;92&quot; cy=&quot;72&quot; r=&quot;22&quot; fill=&quot;#9be7ff&quot; stroke=&quot;#1b1f7a&quot; stroke-width=&quot;6&quot;/&gt;&lt;path d=&quot;m108 88 16 16&quot; stroke=&quot;#ffb400&quot; stroke-width=&quot;10&quot; stroke-linecap=&quot;round&quot;/&gt;&lt;/svg&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;grid&quot;&gt;
+&lt;div&gt;
+&lt;div class=&quot;win&quot;&gt;
+&lt;div class=&quot;bar&quot;&gt;&lt;i class=&quot;dot r&quot;&gt;&lt;/i&gt;&lt;i class=&quot;dot y&quot;&gt;&lt;/i&gt;&lt;i class=&quot;dot g&quot;&gt;&lt;/i&gt;&lt;span class=&quot;tab&quot;&gt;&lt;b class=&quot;h5&quot;&gt;5&lt;/b&gt;index.html&lt;/span&gt;&lt;/div&gt;
+&lt;pre class=&quot;code&quot; id=&quot;codeHtml&quot; tabindex=&quot;0&quot;&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;div class=&quot;win&quot;&gt;
+&lt;div class=&quot;bar&quot;&gt;&lt;span class=&quot;tab&quot;&gt;&lt;b class=&quot;c3&quot;&gt;3&lt;/b&gt;style.css&lt;/span&gt;&lt;/div&gt;
+&lt;pre class=&quot;code&quot; id=&quot;codeCss&quot; tabindex=&quot;0&quot;&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;win browser&quot;&gt;
+&lt;div class=&quot;bar&quot;&gt;&lt;i class=&quot;dot r&quot;&gt;&lt;/i&gt;&lt;i class=&quot;dot y&quot;&gt;&lt;/i&gt;&lt;i class=&quot;dot g&quot;&gt;&lt;/i&gt;&lt;div class=&quot;url&quot;&gt;&lt;svg viewBox=&quot;0 0 24 24&quot; fill=&quot;none&quot; stroke=&quot;#2563eb&quot; stroke-width=&quot;2&quot;&gt;&lt;circle cx=&quot;12&quot; cy=&quot;12&quot; r=&quot;9&quot;/&gt;&lt;path d=&quot;M3 12h18M12 3c3 3 3 15 0 18M12 3c-3 3-3 15 0 18&quot;/&gt;&lt;/svg&gt;job-application-form.html&lt;/div&gt;&lt;/div&gt;
+&lt;div class=&quot;preview&quot; id=&quot;preview&quot;&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;grid grid2&quot;&gt;
+&lt;div&gt;
+&lt;div class=&quot;win&quot;&gt;
+&lt;div class=&quot;bar&quot;&gt;&lt;i class=&quot;dot r&quot;&gt;&lt;/i&gt;&lt;i class=&quot;dot y&quot;&gt;&lt;/i&gt;&lt;i class=&quot;dot g&quot;&gt;&lt;/i&gt;&lt;span class=&quot;tab&quot;&gt;&lt;b class=&quot;h5&quot;&gt;5&lt;/b&gt;index.html&lt;/span&gt;&lt;/div&gt;
+&lt;pre class=&quot;code&quot; id=&quot;codeHtml2&quot; tabindex=&quot;0&quot;&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;div class=&quot;win&quot;&gt;
+&lt;div class=&quot;bar&quot;&gt;&lt;span class=&quot;tab&quot;&gt;&lt;b class=&quot;c3&quot;&gt;3&lt;/b&gt;style.css&lt;/span&gt;&lt;/div&gt;
+&lt;pre class=&quot;code&quot; id=&quot;codeCss2&quot; tabindex=&quot;0&quot;&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;win browser&quot;&gt;
+&lt;div class=&quot;bar&quot;&gt;&lt;i class=&quot;dot r&quot;&gt;&lt;/i&gt;&lt;i class=&quot;dot y&quot;&gt;&lt;/i&gt;&lt;i class=&quot;dot g&quot;&gt;&lt;/i&gt;&lt;div class=&quot;url&quot;&gt;&lt;svg viewBox=&quot;0 0 24 24&quot; fill=&quot;none&quot; stroke=&quot;#2563eb&quot; stroke-width=&quot;2&quot;&gt;&lt;circle cx=&quot;12&quot; cy=&quot;12&quot; r=&quot;9&quot;/&gt;&lt;path d=&quot;M3 12h18M12 3c3 3 3 15 0 18M12 3c-3 3-3 15 0 18&quot;/&gt;&lt;/svg&gt;flower-shop.html&lt;/div&gt;&lt;/div&gt;
+&lt;div id=&quot;flowerPreview&quot;&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;brand&quot;&gt;
+&lt;svg viewBox=&quot;0 0 64 64&quot;&gt;&lt;path d=&quot;M32 4 4 58h14l14-30 14 30h14Z&quot; fill=&quot;#1b5cff&quot;/&gt;&lt;circle cx=&quot;32&quot; cy=&quot;48&quot; r=&quot;7&quot; fill=&quot;#ff3b30&quot;/&gt;&lt;/svg&gt;
+&lt;span&gt;Algorithm&lt;br&gt;Arch&lt;/span&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;!-- ===== SOURCE: index.html body (this exact text is both shown and rendered) ===== --&gt;
+&lt;script type=&quot;text/plain&quot; id=&quot;srcHtml&quot;&gt;
+   &lt;div class=&quot;container&quot;&gt;
+      &lt;h1&gt;&lt;svg class=&quot;ico&quot;&gt;&lt;use href=&quot;#i-brief&quot;/&gt;&lt;/svg&gt; Job Application Form&lt;/h1&gt;
+      &lt;label class=&quot;search-label&quot; for=&quot;search&quot;&gt;Search&lt;/label&gt;
+      &lt;div class=&quot;search field&quot;&gt;
+         &lt;svg&gt;&lt;use href=&quot;#i-search&quot;/&gt;&lt;/svg&gt;
+         &lt;input type=&quot;search&quot; id=&quot;search&quot; placeholder=&quot;Search form fields...&quot; aria-label=&quot;Search form fields&quot;&gt;
+      &lt;/div&gt;
+
+      &lt;form class=&quot;form&quot; id=&quot;jobForm&quot;&gt;
+
+         &lt;!-- Full Name --&gt;
+         &lt;div class=&quot;row&quot;&gt;
+            &lt;label for=&quot;name&quot;&gt;Full Name&lt;/label&gt;
+            &lt;div class=&quot;field&quot;&gt;
+               &lt;svg&gt;&lt;use href=&quot;#i-user&quot;/&gt;&lt;/svg&gt;
+               &lt;input type=&quot;text&quot; id=&quot;name&quot; placeholder=&quot;Your full name&quot; required&gt;
+            &lt;/div&gt;
+         &lt;/div&gt;
+
+         &lt;!-- Email Address --&gt;
+         &lt;div class=&quot;row&quot;&gt;
+            &lt;label for=&quot;email&quot;&gt;Email Address&lt;/label&gt;
+            &lt;div class=&quot;field&quot;&gt;
+               &lt;svg&gt;&lt;use href=&quot;#i-mail&quot;/&gt;&lt;/svg&gt;
+               &lt;input type=&quot;email&quot; id=&quot;email&quot; placeholder=&quot;you@example.com&quot; required&gt;
+            &lt;/div&gt;
+         &lt;/div&gt;
+
+         &lt;!-- Phone Number --&gt;
+         &lt;div class=&quot;row&quot;&gt;
+            &lt;label for=&quot;phone&quot;&gt;Phone Number&lt;/label&gt;
+            &lt;div class=&quot;field&quot;&gt;
+               &lt;svg&gt;&lt;use href=&quot;#i-phone&quot;/&gt;&lt;/svg&gt;
+               &lt;input type=&quot;tel&quot; id=&quot;phone&quot; placeholder=&quot;+254 712 345 678&quot; required&gt;
+            &lt;/div&gt;
+         &lt;/div&gt;
+
+         &lt;!-- Gender --&gt;
+         &lt;div class=&quot;row&quot;&gt;
+            &lt;label&gt;Gender&lt;/label&gt;
+            &lt;div class=&quot;options&quot;&gt;
+               &lt;label for=&quot;male&quot;&gt;&lt;input type=&quot;radio&quot; name=&quot;gender&quot; id=&quot;male&quot; value=&quot;Male&quot; required&gt; Male&lt;/label&gt;
+               &lt;label for=&quot;female&quot;&gt;&lt;input type=&quot;radio&quot; name=&quot;gender&quot; id=&quot;female&quot; value=&quot;Female&quot;&gt; Female&lt;/label&gt;
+            &lt;/div&gt;
+         &lt;/div&gt;
+
+         &lt;!-- Password --&gt;
+         &lt;div class=&quot;row&quot;&gt;
+            &lt;label for=&quot;password&quot;&gt;Password&lt;/label&gt;
+            &lt;div class=&quot;field&quot;&gt;
+               &lt;svg&gt;&lt;use href=&quot;#i-lock&quot;/&gt;&lt;/svg&gt;
+               &lt;input type=&quot;password&quot; id=&quot;password&quot; placeholder=&quot;Create a password (min 6 characters)&quot; minlength=&quot;6&quot; required&gt;
+            &lt;/div&gt;
+         &lt;/div&gt;
+
+         &lt;!-- Position Applying For --&gt;
+         &lt;div class=&quot;row&quot;&gt;
+            &lt;label for=&quot;position&quot;&gt;Position Applying For&lt;/label&gt;
+            &lt;div class=&quot;field&quot;&gt;
+               &lt;svg&gt;&lt;use href=&quot;#i-brief&quot;/&gt;&lt;/svg&gt;
+               &lt;select id=&quot;position&quot; required&gt;
+                  &lt;option value=&quot;&quot; selected disabled&gt;Select a position&lt;/option&gt;
+                  &lt;option&gt;Frontend Developer&lt;/option&gt;
+                  &lt;option&gt;Backend Developer&lt;/option&gt;
+                  &lt;option&gt;UI/UX Designer&lt;/option&gt;
+                  &lt;option&gt;Project Manager&lt;/option&gt;
+                  &lt;option&gt;Data Analyst&lt;/option&gt;
+               &lt;/select&gt;
+               &lt;svg class=&quot;chev&quot;&gt;&lt;use href=&quot;#i-chev&quot;/&gt;&lt;/svg&gt;
+            &lt;/div&gt;
+         &lt;/div&gt;
+
+         &lt;!-- Available Start Date --&gt;
+         &lt;div class=&quot;row&quot;&gt;
+            &lt;label for=&quot;startDate&quot;&gt;Available Start Date&lt;/label&gt;
+            &lt;div class=&quot;field&quot;&gt;
+               &lt;svg&gt;&lt;use href=&quot;#i-cal&quot;/&gt;&lt;/svg&gt;
+               &lt;input type=&quot;date&quot; id=&quot;startDate&quot; required&gt;
+            &lt;/div&gt;
+         &lt;/div&gt;
+
+         &lt;!-- Website / Portfolio Link --&gt;
+         &lt;div class=&quot;row&quot;&gt;
+            &lt;label for=&quot;website&quot;&gt;Website / Portfolio Link&lt;/label&gt;
+            &lt;div class=&quot;field&quot;&gt;
+               &lt;svg&gt;&lt;use href=&quot;#i-globe&quot;/&gt;&lt;/svg&gt;
+               &lt;input type=&quot;url&quot; id=&quot;website&quot; placeholder=&quot;https://yourwebsite.com&quot;&gt;
+            &lt;/div&gt;
+         &lt;/div&gt;
+
+         &lt;!-- Resume / CV --&gt;
+         &lt;div class=&quot;row&quot;&gt;
+            &lt;label&gt;&lt;svg&gt;&lt;use href=&quot;#i-doc&quot;/&gt;&lt;/svg&gt; Resume / CV&lt;/label&gt;
+            &lt;div class=&quot;drop&quot; id=&quot;drop&quot;&gt;
+               &lt;svg&gt;&lt;use href=&quot;#i-cloud&quot;/&gt;&lt;/svg&gt;
+               &lt;span class=&quot;main&quot;&gt;&lt;b&gt;Click to upload&lt;/b&gt; or drag and drop&lt;/span&gt;
+               &lt;small id=&quot;hint&quot;&gt;PDF, DOC or DOCX (Max 5MB)&lt;/small&gt;
+               &lt;input type=&quot;file&quot; id=&quot;file&quot; accept=&quot;.pdf,.doc,.docx&quot;&gt;
+            &lt;/div&gt;
+         &lt;/div&gt;
+
+         &lt;!-- Work Experience --&gt;
+         &lt;div class=&quot;row&quot;&gt;
+            &lt;label for=&quot;experience&quot;&gt;&lt;svg&gt;&lt;use href=&quot;#i-brief&quot;/&gt;&lt;/svg&gt; Work Experience&lt;/label&gt;
+            &lt;textarea id=&quot;experience&quot; placeholder=&quot;Describe your previous roles and skills...&quot;&gt;&lt;/textarea&gt;
+         &lt;/div&gt;
+
+         &lt;!-- Confirmation checkbox --&gt;
+         &lt;div class=&quot;row check&quot;&gt;
+            &lt;label for=&quot;agree&quot;&gt;&lt;input type=&quot;checkbox&quot; id=&quot;agree&quot; required&gt; I confirm that the information above is correct&lt;/label&gt;
+         &lt;/div&gt;
+
+         &lt;!-- Submit --&gt;
+         &lt;button type=&quot;submit&quot;&gt;&lt;svg&gt;&lt;use href=&quot;#i-send&quot;/&gt;&lt;/svg&gt; Submit Application&lt;/button&gt;
+         &lt;div class=&quot;msg&quot; id=&quot;msg&quot;&gt;&lt;/div&gt;
+
+      &lt;/form&gt;
+   &lt;/div&gt;
+&lt;/script&gt;
+
+&lt;!-- ===== SOURCE: style.css ===== --&gt;
+&lt;script type=&quot;text/plain&quot; id=&quot;srcCss&quot;&gt;
+body {
+    font-family: Arial, sans-serif;
+    background: #f0f4ff;
+    margin: 0;
+    padding: 20px;
+}
+* {
+    box-sizing: border-box;
+}
+.container {
+    max-width: 600px;
+    margin: auto;
+    background: #ffffff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+h1 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    color: #1e2a78;
+    margin: 0 0 20px;
+    font-size: 28px;
+}
+h1 svg {
+    width: 44px;
+    height: 44px;
+    color: #2563eb;
+}
+.search-label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: #333;
+}
+.search {
+    margin-bottom: 20px;
+}
+.form .check label {
+    font-weight: 400;
+    font-size: 14px;
+    cursor: pointer;
+}
+.check input {
+    width: 18px;
+    height: 18px;
+    margin: 0;
+    accent-color: #2563eb;
+}
+.options {
+    display: flex;
+    gap: 28px;
+}
+.form .options label {
+    margin-bottom: 0;
+    font-weight: 400;
+    cursor: pointer;
+}
+.options input {
+    width: 18px;
+    height: 18px;
+    margin: 0;
+    accent-color: #2563eb;
+}
+.row {
+    margin-bottom: 18px;
+}
+.form label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: #333;
+}
+.form label svg {
+    width: 18px;
+    height: 18px;
+    color: #2a4fb0;
+}
+.field {
+    position: relative;
+}
+.field &gt; svg {
+    position: absolute;
+    left: 14px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 20px;
+    height: 20px;
+    color: #2a4fb0;
+    pointer-events: none;
+}
+.field .chev {
+    left: auto;
+    right: 14px;
+    width: 18px;
+    height: 18px;
+}
+.field input, .field select {
+    width: 100%;
+    height: 46px;
+    padding: 0 14px 0 46px;
+    border: 1px solid #dbe3f0;
+    border-radius: 8px;
+    background: #f7f9fd;
+    font-size: 15px;
+    color: #333;
+    font-family: inherit;
+    outline: none;
+    appearance: none;
+}
+.field select {
+    color: #6b7488;
+    cursor: pointer;
+}
+.field select.chosen {
+    color: #333;
+}
+input::placeholder, textarea::placeholder {
+    color: #6b7488;
+}
+input:focus, select:focus, textarea:focus {
+    border-color: #2563eb;
+    box-shadow: 0 0 0 3px rgba(37,99,235,0.2);
+}
+.drop {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+    padding: 26px 16px;
+    border: 2px dashed #9db8f0;
+    border-radius: 10px;
+    background: #f7f9fd;
+    text-align: center;
+    cursor: pointer;
+}
+.drop.over {
+    border-color: #2563eb;
+    background: #e6eeff;
+}
+.drop svg {
+    width: 40px;
+    height: 40px;
+    color: #2563eb;
+}
+.drop b {
+    color: #1e2a78;
+}
+.drop .main {
+    font-size: 14px;
+}
+.drop small {
+    color: #6b7488;
+    font-size: 12px;
+}
+.drop input {
+    display: none;
+}
+textarea {
+    width: 100%;
+    height: 80px;
+    padding: 12px 14px;
+    border: 1px solid #dbe3f0;
+    border-radius: 8px;
+    background: #f7f9fd;
+    font-size: 14px;
+    color: #333;
+    font-family: inherit;
+    resize: vertical;
+    outline: none;
+}
+button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    width: 100%;
+    height: 52px;
+    border: 0;
+    border-radius: 8px;
+    background: #2563eb;
+    color: #fff;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    font-family: inherit;
+}
+button:hover {
+    background: #1d4ed8;
+}
+button svg {
+    width: 22px;
+    height: 22px;
+}
+.msg {
+    margin-top: 14px;
+    text-align: center;
+    color: #2563eb;
+    font-weight: 600;
+}
+&lt;/script&gt;
+
+&lt;script type=&quot;text/plain&quot; id=&quot;srcHtml2&quot;&gt;
+    &lt;header class=&quot;header&quot;&gt;
+        &lt;div class=&quot;container&quot;&gt;
+            &lt;h1&gt;🌸 Flower Shop&lt;/h1&gt;
+            &lt;nav class=&quot;nav&quot;&gt;
+                &lt;ul&gt;
+                    &lt;li&gt;&lt;a href=&quot;#home&quot;&gt;Home&lt;/a&gt;&lt;/li&gt;
+                    &lt;li&gt;&lt;a href=&quot;#shop&quot;&gt;Shop&lt;/a&gt;&lt;/li&gt;
+                    &lt;li&gt;&lt;a href=&quot;#about&quot;&gt;About&lt;/a&gt;&lt;/li&gt;
+                    &lt;li&gt;&lt;a href=&quot;#contact&quot;&gt;Contact&lt;/a&gt;&lt;/li&gt;
+                &lt;/ul&gt;
+            &lt;/nav&gt;
+        &lt;/div&gt;
+    &lt;/header&gt;
+
+    &lt;section class=&quot;hero&quot; id=&quot;home&quot;&gt;
+        &lt;div class=&quot;container&quot;&gt;
+            &lt;div&gt;
+                &lt;h2&gt;Fresh Flowers&lt;/h2&gt;
+                &lt;p&gt;Brighten your day with nature&#x27;s beauty.&lt;/p&gt;
+                &lt;a href=&quot;#&quot; class=&quot;btn&quot;&gt;Shop Now&lt;/a&gt;
+            &lt;/div&gt;
+            &lt;div class=&quot;bouquet&quot;&gt;💐&lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/section&gt;
+
+    &lt;section class=&quot;featured&quot; id=&quot;shop&quot;&gt;
+        &lt;div class=&quot;container&quot;&gt;
+            &lt;h2&gt;🌸 Our Best Sellers&lt;/h2&gt;
+            &lt;div class=&quot;products&quot;&gt;
+                &lt;div class=&quot;product-card&quot;&gt;
+                    &lt;div class=&quot;photo&quot; style=&quot;background:#fde0e0&quot;&gt;🌹&lt;/div&gt;
+                    &lt;h3&gt;Roses&lt;/h3&gt;
+                    &lt;p&gt;$15.00&lt;/p&gt;
+                    &lt;button&gt;Add to Cart&lt;/button&gt;
+                &lt;/div&gt;
+                &lt;div class=&quot;product-card&quot;&gt;
+                    &lt;div class=&quot;photo&quot; style=&quot;background:#fff3c4&quot;&gt;🌻&lt;/div&gt;
+                    &lt;h3&gt;Sunflowers&lt;/h3&gt;
+                    &lt;p&gt;$12.00&lt;/p&gt;
+                    &lt;button&gt;Add to Cart&lt;/button&gt;
+                &lt;/div&gt;
+                &lt;div class=&quot;product-card&quot;&gt;
+                    &lt;div class=&quot;photo&quot; style=&quot;background:#fde0ec&quot;&gt;🌷&lt;/div&gt;
+                    &lt;h3&gt;Tulips&lt;/h3&gt;
+                    &lt;p&gt;$14.00&lt;/p&gt;
+                    &lt;button&gt;Add to Cart&lt;/button&gt;
+                &lt;/div&gt;
+                &lt;div class=&quot;product-card&quot;&gt;
+                    &lt;div class=&quot;photo&quot; style=&quot;background:#f3f3e6&quot;&gt;🏵️&lt;/div&gt;
+                    &lt;h3&gt;Lilies&lt;/h3&gt;
+                    &lt;p&gt;$16.00&lt;/p&gt;
+                    &lt;button&gt;Add to Cart&lt;/button&gt;
+                &lt;/div&gt;
+                &lt;div class=&quot;product-card&quot;&gt;
+                    &lt;div class=&quot;photo&quot; style=&quot;background:#ffe6d6&quot;&gt;💐&lt;/div&gt;
+                    &lt;h3&gt;Mixed Bouquet&lt;/h3&gt;
+                    &lt;p&gt;$18.00&lt;/p&gt;
+                    &lt;button&gt;Add to Cart&lt;/button&gt;
+                &lt;/div&gt;
+                &lt;div class=&quot;product-card&quot;&gt;
+                    &lt;div class=&quot;photo&quot; style=&quot;background:#f1defa&quot;&gt;🪻&lt;/div&gt;
+                    &lt;h3&gt;Orchids&lt;/h3&gt;
+                    &lt;p&gt;$20.00&lt;/p&gt;
+                    &lt;button&gt;Add to Cart&lt;/button&gt;
+                &lt;/div&gt;
+                &lt;div class=&quot;product-card&quot;&gt;
+                    &lt;div class=&quot;photo&quot; style=&quot;background:#fff8d6&quot;&gt;🌼&lt;/div&gt;
+                    &lt;h3&gt;Daisies&lt;/h3&gt;
+                    &lt;p&gt;$13.00&lt;/p&gt;
+                    &lt;button&gt;Add to Cart&lt;/button&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+
+            &lt;div class=&quot;features&quot;&gt;
+                &lt;div&gt;&lt;b&gt;🚚&lt;/b&gt;Free Shipping&lt;br&gt;on orders over $50&lt;/div&gt;
+                &lt;div&gt;&lt;b&gt;🌿&lt;/b&gt;Fresh Flowers&lt;br&gt;Daily&lt;/div&gt;
+                &lt;div&gt;&lt;b&gt;🛡️&lt;/b&gt;Secure Payment&lt;br&gt;100% safe&lt;/div&gt;
+                &lt;div&gt;&lt;b&gt;❤️&lt;/b&gt;Happy Customers&lt;br&gt;Always&lt;/div&gt;
+            &lt;/div&gt;
+
+            &lt;div class=&quot;smile&quot; id=&quot;about&quot;&gt;
+                &lt;span class=&quot;art&quot;&gt;🌼&lt;/span&gt;
+                &lt;div&gt;
+                    &lt;h3&gt;Make Someone Smile&lt;/h3&gt;
+                    &lt;p&gt;Beautiful flowers for every occasion.&lt;/p&gt;
+                    &lt;a href=&quot;#&quot; class=&quot;btn&quot; style=&quot;font-size:15px;padding:10px 22px&quot;&gt;Shop Now&lt;/a&gt;
+                &lt;/div&gt;
+                &lt;span class=&quot;art&quot;&gt;🌺&lt;/span&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/section&gt;
+    &lt;footer id=&quot;contact&quot;&gt;&lt;/footer&gt;
+&lt;/script&gt;
+
+&lt;script type=&quot;text/plain&quot; id=&quot;srcCss2&quot;&gt;
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+}
+.header {
+    background: #ff6b81;
+    color: white;
+    padding: 20px;
+}
+.nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+.nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+.hero {
+    background: url(&#x27;hero.jpg&#x27;) center/cover;
+    padding: 80px 20px;
+    text-align: center;
+    color: white;
+}
+.hero h2 {
+    font-size: 48px;
+    margin: 0;
+}
+.hero p {
+    font-size: 20px;
+    margin: 10px 0;
+}
+.btn {
+    background: #ff4081;
+    color: white;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 30px;
+    font-size: 18px;
+    cursor: pointer;
+}
+.products {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+.product-card {
+    background: #fff;
+    border-radius: 10px;
+    padding: 15px;
+    text-align: center;
+}
+.product-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+.product-card h3 {
+    font-size: 22px;
+    margin: 10px 0;
+}
+.product-card p {
+    color: #ff4081;
+    font-size: 20px;
+}
+.product-card button {
+    background: #ff4081;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 20px;
+}
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+.header .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.header h1 {
+    margin: 0;
+    font-style: italic;
+    font-size: 30px;
+}
+.nav ul {
+    margin: 0;
+    padding: 0;
+}
+.nav a {
+    padding-bottom: 6px;
+}
+.nav a[href=&quot;#home&quot;] {
+    border-bottom: 3px solid #ffd54f;
+}
+.hero {
+    background: linear-gradient(100deg,#fff6e8 0%,#fde9dc 55%,#fbd3dc 100%);
+    text-align: left;
+    color: #333;
+    padding: 60px 20px;
+}
+.hero .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+}
+.hero h2 {
+    color: #14532d;
+    font-size: 52px;
+}
+.hero p {
+    color: #444;
+    max-width: 280px;
+}
+.hero .bouquet {
+    font-size: 140px;
+    line-height: 1;
+}
+.featured {
+    padding: 30px 20px;
+}
+.featured h2 {
+    text-align: center;
+    color: #14532d;
+    font-size: 30px;
+    margin: 10px 0 24px;
+}
+.featured h2::before, .featured h2::after {
+    content: &quot;&quot;;
+    display: inline-block;
+    width: 70px;
+    height: 2px;
+    background: #ff4081;
+    vertical-align: middle;
+    margin: 0 14px;
+}
+.product-card {
+    flex: 1 1 28%;
+    min-width: 220px;
+    box-shadow: 0 2px 8px rgba(0,0,0,.08);
+    text-align: left;
+    box-sizing: border-box;
+}
+.product-card .photo {
+    height: 120px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 64px;
+}
+.product-card h3 {
+    font-size: 18px;
+    margin: 12px 0 4px;
+}
+.product-card p {
+    font-weight: bold;
+    margin: 4px 0 10px;
+}
+.product-card button {
+    width: 100%;
+    font-size: 15px;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 3px 6px rgba(255,64,129,.3);
+}
+.features {
+    display: flex;
+    flex-wrap: wrap;
+    background: #fdecef;
+    border-radius: 12px;
+    margin: 24px 0;
+    padding: 14px 0;
+}
+.features div {
+    flex: 1 1 150px;
+    text-align: center;
+    font-size: 13px;
+    color: #444;
+    padding: 6px 10px;
+    border-right: 1px solid #f5c6d0;
+}
+.features div:last-child {
+    border-right: none;
+}
+.features b {
+    display: block;
+    font-size: 22px;
+    margin-bottom: 4px;
+}
+.smile {
+    background: linear-gradient(90deg,#fff3e0,#fde9dc);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+    padding: 20px;
+    text-align: center;
+}
+.smile h3 {
+    margin: 0;
+    font-size: 28px;
+    color: #14532d;
+}
+.smile p {
+    margin: 6px 0 12px;
+    font-size: 15px;
+    color: #444;
+}
+.smile .art {
+    font-size: 60px;
+}
+&lt;/script&gt;
+
+&lt;script&gt;
+(function(){
+  function $(id){return document.getElementById(id)}
+  function src(id){return $(id).textContent.replace(/^\n/,&#x27;&#x27;).replace(/\s+$/,&#x27;&#x27;)}
+  function esc(s){return s.replace(/&amp;/g,&#x27;&amp;amp;&#x27;).replace(/&lt;/g,&#x27;&amp;lt;&#x27;).replace(/&gt;/g,&#x27;&amp;gt;&#x27;)}
+  function scope(c,pre){return c.replace(/([^{}]+)\{/g,function(m,sel){return sel.split(&#x27;,&#x27;).map(function(s){s=s.trim();if(!s)return s;return /^body\b/.test(s)?pre+s.slice(4):pre+&#x27; &#x27;+s}).join(&#x27;, &#x27;)+&#x27; {&#x27;})}
+  function lines(h){return h.split(&#x27;\n&#x27;).map(function(l,i){return &#x27;&lt;span class=&quot;l&quot; data-n=&quot;&#x27;+(i+1)+&#x27;&quot;&gt;&#x27;+l+&#x27;&lt;/span&gt;&#x27;}).join(&#x27;&#x27;)}
+
+  var body=src(&#x27;srcHtml&#x27;), css=src(&#x27;srcCss&#x27;);
+  var head=[&#x27;&lt;!DOCTYPE html&gt;&#x27;,&#x27;&lt;html lang=&quot;en&quot;&gt;&#x27;,&#x27;&lt;head&gt;&#x27;,&#x27;   &lt;meta charset=&quot;UTF-8&quot;&gt;&#x27;,&#x27;   &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;&#x27;,&#x27;   &lt;title&gt;Job Application Form&lt;/title&gt;&#x27;,&#x27;   &lt;link rel=&quot;stylesheet&quot; href=&quot;style.css&quot;&gt;&#x27;,&#x27;&lt;/head&gt;&#x27;,&#x27;&lt;body&gt;&#x27;].join(&#x27;\n&#x27;);
+  var fullHtml=head+&#x27;\n&#x27;+body+&#x27;\n&lt;/body&gt;\n&lt;/html&gt;&#x27;;
+
+  /* highlighters */
+  function hiHtml(t){
+    return esc(t).replace(/(&amp;lt;!--[\s\S]*?--&amp;gt;)|&amp;lt;(\/?)([\w!]+)((?:\s[^&amp;]*?)?)(\/?)&amp;gt;/g,function(m,cm,sl,name,attrs,self){
+      if(cm)return &#x27;&lt;span class=&quot;c&quot;&gt;&#x27;+cm+&#x27;&lt;/span&gt;&#x27;;
+      if(name.charAt(0)===&#x27;!&#x27;)return &#x27;&lt;span class=&quot;t&quot;&gt;&#x27;+m+&#x27;&lt;/span&gt;&#x27;;
+      var a=attrs.replace(/(&quot;[^&quot;]*&quot;)|([\w:-]+)/g,function(x,str,nm){return str?&#x27;&lt;span class=&quot;s&quot;&gt;&#x27;+str+&#x27;&lt;/span&gt;&#x27;:&#x27;&lt;span class=&quot;a&quot;&gt;&#x27;+nm+&#x27;&lt;/span&gt;&#x27;});
+      return &#x27;&lt;span class=&quot;t&quot;&gt;&amp;lt;&#x27;+sl+name+&#x27;&lt;/span&gt;&#x27;+a+&#x27;&lt;span class=&quot;t&quot;&gt;&#x27;+self+&#x27;&amp;gt;&lt;/span&gt;&#x27;;
+    });
+  }
+  function hiCss(t){
+    return esc(t).split(&#x27;\n&#x27;).map(function(l){
+      var m;
+      if(/^\s*\}/.test(l))return l;
+      if(/\{\s*$/.test(l))return &#x27;&lt;span class=&quot;k&quot;&gt;&#x27;+l.replace(/\s*\{\s*$/,&#x27;&#x27;)+&#x27;&lt;/span&gt; {&#x27;;
+      if((m=l.match(/^(\s*)([\w-]+)(:\s*)(.*?)(;?)$/)))return m[1]+&#x27;&lt;span class=&quot;p&quot;&gt;&#x27;+m[2]+&#x27;&lt;/span&gt;&#x27;+m[3]+&#x27;&lt;span class=&quot;v&quot;&gt;&#x27;+m[4]+&#x27;&lt;/span&gt;&#x27;+m[5];
+      return l;
+    }).join(&#x27;\n&#x27;);
+  }
+  $(&#x27;codeHtml&#x27;).innerHTML=lines(hiHtml(fullHtml));
+  $(&#x27;codeCss&#x27;).innerHTML=lines(hiCss(css));
+
+  /* run exactly the code that is displayed */
+  var st=document.createElement(&#x27;style&#x27;);
+  st.textContent=scope(css,&#x27;#preview&#x27;);
+  document.head.appendChild(st);
+  $(&#x27;preview&#x27;).innerHTML=body;
+
+  var drop=$(&#x27;drop&#x27;),file=$(&#x27;file&#x27;),hint=$(&#x27;hint&#x27;),sel=$(&#x27;position&#x27;);
+  sel.addEventListener(&#x27;change&#x27;,function(){sel.classList.add(&#x27;chosen&#x27;)});
+  drop.addEventListener(&#x27;click&#x27;,function(){file.click()});
+  [&#x27;dragenter&#x27;,&#x27;dragover&#x27;].forEach(function(e){drop.addEventListener(e,function(ev){ev.preventDefault();drop.classList.add(&#x27;over&#x27;)})});
+  [&#x27;dragleave&#x27;,&#x27;drop&#x27;].forEach(function(e){drop.addEventListener(e,function(ev){ev.preventDefault();drop.classList.remove(&#x27;over&#x27;)})});
+  function pick(f){
+    if(!f)return;
+    if(!/\.(pdf|doc|docx)$/i.test(f.name)||f.size&gt;5*1024*1024){hint.textContent=&#x27;Invalid file: use PDF, DOC or DOCX under 5MB&#x27;;file.value=&#x27;&#x27;;return}
+    hint.textContent=f.name;
+  }
+  file.addEventListener(&#x27;change&#x27;,function(){pick(file.files[0])});
+  drop.addEventListener(&#x27;drop&#x27;,function(ev){var f=ev.dataTransfer.files[0];if(f){try{var dt=new DataTransfer();dt.items.add(f);file.files=dt.files}catch(e){}pick(f)}});
+  /* Copy buttons: each copies the source code of its own field */
+  var rowSrc=body.match(/^ {9}&lt;div class=&quot;row[^&quot;]*&quot;&gt;\n[\s\S]*?\n {9}&lt;\/div&gt;$/gm)||[];
+  function copyText(t,done){
+    function fb(){var ta=document.createElement(&#x27;textarea&#x27;);ta.value=t;ta.style.cssText=&#x27;position:fixed;opacity:0&#x27;;document.body.appendChild(ta);ta.select();try{document.execCommand(&#x27;copy&#x27;)}catch(e){}document.body.removeChild(ta);done()}
+    if(navigator.clipboard&amp;&amp;navigator.clipboard.writeText){navigator.clipboard.writeText(t).then(done,fb)}else{fb()}
+  }
+  document.querySelectorAll(&#x27;#preview .row&#x27;).forEach(function(row,i){
+    if(!rowSrc[i])return;
+    var code=rowSrc[i].replace(/^ {9}/gm,&#x27;&#x27;);
+    var b=document.createElement(&#x27;button&#x27;);
+    b.type=&#x27;button&#x27;;b.className=&#x27;copy-btn&#x27;;b.textContent=&#x27;Copy&#x27;;b.setAttribute(&#x27;aria-label&#x27;,&#x27;Copy code of this field&#x27;);
+    var f=row.querySelector(&#x27;.field&#x27;);
+    if(f){f.classList.add(&#x27;hascopy&#x27;);if(f.querySelector(&#x27;select&#x27;)){b.classList.add(&#x27;left-of-chev&#x27;)}f.appendChild(b)}
+    else{b.classList.add(&#x27;corner&#x27;);row.appendChild(b)}
+    b.addEventListener(&#x27;click&#x27;,function(){copyText(code,function(){b.textContent=&#x27;Copied!&#x27;;setTimeout(function(){b.textContent=&#x27;Copy&#x27;},1500)})});
+  });
+
+  $(&#x27;startDate&#x27;).min=new Date().toISOString().slice(0,10);
+  $(&#x27;search&#x27;).addEventListener(&#x27;input&#x27;,function(){
+    var q=this.value.trim().toLowerCase();
+    document.querySelectorAll(&#x27;#jobForm .row&#x27;).forEach(function(r){
+      r.style.display=(!q||r.textContent.toLowerCase().indexOf(q)&gt;-1)?&#x27;&#x27;:&#x27;none&#x27;;
+    });
+  });
+  $(&#x27;jobForm&#x27;).addEventListener(&#x27;submit&#x27;,function(ev){ev.preventDefault();$(&#x27;msg&#x27;).textContent=&#x27;Application submitted. Thank you!&#x27;});
+  /* ===== Flower Shop block ===== */
+  var body2=src(&#x27;srcHtml2&#x27;), css2=src(&#x27;srcCss2&#x27;);
+  var head2=[&#x27;&lt;!DOCTYPE html&gt;&#x27;,&#x27;&lt;html lang=&quot;en&quot;&gt;&#x27;,&#x27;&lt;head&gt;&#x27;,&#x27;    &lt;meta charset=&quot;UTF-8&quot;&gt;&#x27;,&#x27;    &lt;title&gt;Flower Shop&lt;/title&gt;&#x27;,&#x27;    &lt;link rel=&quot;stylesheet&quot; href=&quot;style.css&quot;&gt;&#x27;,&#x27;&lt;/head&gt;&#x27;,&#x27;&lt;body&gt;&#x27;].join(&#x27;\n&#x27;);
+  $(&#x27;codeHtml2&#x27;).innerHTML=lines(hiHtml(head2+&#x27;\n&#x27;+body2+&#x27;\n&lt;/body&gt;\n&lt;/html&gt;&#x27;));
+  $(&#x27;codeCss2&#x27;).innerHTML=lines(hiCss(css2));
+  var st2=document.createElement(&#x27;style&#x27;);
+  st2.textContent=scope(css2,&#x27;#flowerPreview&#x27;);
+  document.head.appendChild(st2);
+  $(&#x27;flowerPreview&#x27;).innerHTML=body2;
+  document.querySelectorAll(&#x27;#flowerPreview a[href^=&quot;#&quot;]&#x27;).forEach(function(a){a.addEventListener(&#x27;click&#x27;,function(e){e.preventDefault()})});
+})();
+&lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+"></iframe>
+</div>
+<script>
+(function(){
+  var f=document.getElementById("jobFlowerFrame");
+  function fit(){
+    try{
+      var d=f.contentDocument;
+      if(!d||!d.documentElement)return;
+      f.style.height=d.documentElement.scrollHeight+"px";
+    }catch(e){}
+  }
+  f.addEventListener("load",function(){
+    fit();
+    try{
+      if(window.ResizeObserver){new ResizeObserver(fit).observe(f.contentDocument.documentElement);}
+    }catch(e){}
+    setTimeout(fit,300);
+  });
+  window.addEventListener("resize",fit);
+})();
+</script>
 <script>
 function copyBlock(b){
   var t=b.previousElementSibling.textContent;
