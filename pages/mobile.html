@@ -9184,11 +9184,42 @@ function handleRestoreFile() {
       </table>
       </div>
 
-      <p class="sal-note">🎉 সবকিছু ঠিক থাকলে আপনার ফ্রি সাবডোমেইনের লিঙ্কে ঢুকলেই PHP সাইটটি লাইভ দেখতে পাবেন। <br>
-      উল্লেখ্য যে :  <br>
-এডমিন পাসওয়ার্ড পূর্বেরটিই থাকবে অর্থাৎ লোকাল সার্ভারে যে পাসওয়ার্ডটি দেওয়া ছিল,  তা লাইভ সার্ভারেও ঠিক একই এডমিন পাসওয়ার্ড দিয়ে ওপেন করতে হবে।
-      </p>
+      <p class="sal-note">🎉 সবকিছু ঠিক থাকলে আপনার ফ্রি সাবডোমেইনের লিঙ্কে ঢুকলেই PHP সাইটটি লাইভ দেখতে পাবেন।</p>
     </div>
+  </section>
+
+  <section id="schoolApp">
+    <h2 class="section-title">🏫 School Management App তৈরির প্রক্রিয়া</h2>
+
+    <article class="card step">
+      <div class="step-num">১</div><div>
+        <h3>📝 অ্যাপ আইডিয়া লিস্টের প্রম্পট</h3>
+        <p>নিচের প্রম্পটটি কপি করে ChatGPT বা Claude-এ পেস্ট করুন:</p>
+        <p><strong>১. প্রথম অংশ:</strong></p>
+        <div class="prompt" id="schoolIdeaPrompt">Suggest me no backend mobile application idea list যাহা আমি পরে Google AI Studio দিয়ে তৈরী করব।</div>
+        <div class="copy-row"><button type="button" id="copySchoolIdeaPrompt">প্রম্পট কপি করুন</button></div>
+        <p id="schoolIdeaCopyStatus" aria-live="polite"></p>
+
+        <p><strong>২.</strong> অনেক গুলো দিবে, এর থেকে যেটা পছন্দ হবে সিলেক্ট করে আবার দিব এবং নিচের প্রম্পট কপি করুন:</p>
+        <div class="prompt" id="schoolIdeaPrompt2">Create 3 screen wise application planning with bottom navigation</div>
+        <div class="copy-row"><button type="button" id="copySchoolIdeaPrompt2">প্রম্পট কপি করুন</button></div>
+        <p id="schoolIdeaCopyStatus2" aria-live="polite"></p>
+      </div>
+    </article>
+
+    <article class="card step">
+      <div class="step-num">২</div><div>
+        <h3>⚙️ AI Studio-তে অ্যাপ বানানো</h3>
+        <p><strong>কীভাবে ব্যবহার করবেন?</strong></p>
+        <ol>
+          <li><a href="https://aistudio.google.com" target="_blank" rel="noopener noreferrer">Google AI Studio</a> খুলুন।</li>
+          <li><strong>Build mode</strong>-এ প্রবেশ করুন।</li>
+          <li>নিচের সম্পূর্ণ Prompt কপি করে দিন।</li>
+          <li>অ্যাপ তৈরি হওয়ার পর প্রতিটি মডিউল পরীক্ষা করুন।</li>
+          <li>Android APK তৈরি করার আগে ডেটাবেস, অফলাইন কার্যকারিতা ও Backup/Restore ভালোভাবে পরীক্ষা করুন।</li>
+        </ol>
+      </div>
+    </article>
   </section>
 </main>
 <footer>AI অ্যাপ ও Google Sheets ইনভেন্টরি অ্যাপ তৈরির নির্দেশিকা · মোবাইল ও কম্পিউটার উপযোগী HTML পেজ</footer>
@@ -9214,6 +9245,9 @@ function bindPromptCopy(buttonId, promptId, statusId, successMessage) {
 bindPromptCopy('copyPrompt', 'prdPrompt', 'copyStatus', 'প্রম্পট কপি হয়েছে!');
 bindPromptCopy('copyInventoryPrompt', 'inventoryPrompt', 'inventoryCopyStatus', 'ইনভেন্টরি প্রম্পট কপি হয়েছে!');
 bindPromptCopy('copyShopManagementPrompt', 'shopManagementPrompt', 'shopManagementCopyStatus', 'Shop Management Prompt কপি হয়েছে!');
+
+bindPromptCopy('copySchoolIdeaPrompt', 'schoolIdeaPrompt', 'schoolIdeaCopyStatus', 'School App প্রম্পট কপি হয়েছে!');
+bindPromptCopy('copySchoolIdeaPrompt2', 'schoolIdeaPrompt2', 'schoolIdeaCopyStatus2', 'প্রম্পট কপি হয়েছে!');
 
 document.getElementById('copyShopManagementCode').addEventListener('click', async function () {
   const code = document.getElementById('shopManagementCode');
